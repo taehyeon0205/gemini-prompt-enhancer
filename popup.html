@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: 'Google Sans', sans-serif;
+            width: 320px;
+            padding: 20px;
+            margin: 0;
+            color: #202124;
+        }
+
+        h2 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #1a73e8;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: bold;
+            margin-top: 15px;
+            display: block;
+            color: #5f6368;
+        }
+
+        /* input 태그 디자인 통합 */
+        input[type="password"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #dadce0;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-size: 14px;
+            outline: none;
+        }
+
+            input[type="password"]:focus, input[type="text"]:focus {
+                border-color: #1a73e8;
+            }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+            button:hover {
+                background: #1557b0;
+            }
+
+        #status {
+            margin-top: 10px;
+            font-size: 12px;
+            color: #0d652d;
+            text-align: center;
+            display: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>✨ 프롬프트 마법사 설정</h2>
+
+    <label for="apiKey">API Key (Google AI Studio)</label>
+    <input type="password" id="apiKey" placeholder="AIzaSy...">
+
+    <label for="modelSelect">AI 모델 (선택 또는 직접 입력)</label>
+    <input type="text" id="modelSelect" list="modelList" placeholder="예: gemini-3.5">
+
+    <datalist id="modelList">
+        <option value="gemini-3.5-flash">Gemini 3.5 Flash (기본/추천)</option>
+        <option value="gemini-3.1-flash-lite">Gemini 3.1 Flash Lite (초고속/제한널널함)</option>
+        <option value="gemini-2.5-flash">Gemini 2.5 Flash (기본/추천)</option>
+        <option value="gemini-2.5-flash-lite">Gemini 2.5 Flash-Lite (초고속/제한널널함)</option>
+    </datalist>
+
+    <button id="saveBtn">설정 저장하기</button>
+    <div id="status">✅ 저장되었습니다!</div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Gemini Prompt Enhancer",
+  "version": "2.5",
+  "description": "제미나이 프롬프트를 자동으로 다듬어주는 마법사",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "설정"
+  },
+  "content_scripts": [
+    {
+      "matches": [ "https://gemini.google.com/*" ],
+      "js": [ "content.js" ]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  }
+}
